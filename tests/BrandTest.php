@@ -66,7 +66,7 @@
             // Assert
             $this->assertEquals([],$result);
         }
-        
+
         function test_update()
         {
             // Arrange
@@ -82,26 +82,26 @@
             // Assert
             $this->assertEquals($input_name2, $result[0]->getName());
         }
-        //
-        // function test_find()
-        // {
-        //     // Arrange
-        //     $input_name = "Keens";
-        //     $test_brand = new Brand($input_name);
-        //     $test_brand->setName($input_name);
-        //     $test_brand->save();
-        //     $input_name2 = "The Bruggliatos";
-        //     $test_brand2 = new Brand($input_name2);
-        //     $test_brand2->save();
-        //
-        //     // Act
-        //     $result = Brand::find($test_brand2->getId());
-        //
-        //     // Assert
-        //     $this->assertEquals($test_brand2, $result);
-        //
-        // }
-        //
+
+        function test_find()
+        {
+            // Arrange
+            $input_name = "Keens";
+            $test_brand = new Brand($input_name);
+            $test_brand->setName($input_name);
+            $test_brand->save();
+            $input_name2 = "The Bruggliatos";
+            $test_brand2 = new Brand($input_name2);
+            $test_brand2->save();
+
+            // Act
+            $result = Brand::find($test_brand2->getId());
+
+            // Assert
+            $this->assertEquals($test_brand2, $result);
+
+        }
+        
         // function test_delete()
         // {
         //     // Arrange
