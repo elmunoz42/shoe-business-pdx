@@ -30,27 +30,27 @@
         // Crud function
         function save()
         {
-            // $GLOBALS['DB']->exec("INSERT INTO brands (name) VALUES ('{$this->name}');");
-            // $this->id = (int) $GLOBALS['DB']->LastInsertId();
+            $GLOBALS['DB']->exec("INSERT INTO brands (name) VALUES ('{$this->name}');");
+            $this->id = (int) $GLOBALS['DB']->LastInsertId();
         }
 
         static function getAll()
         {
-            // $brands = array();
-            // $query = $GLOBALS['DB']->query("SELECT * FROM brands;");
-            // foreach( $query as $brand)
-            // {
-            //     $brand_name = $brand['name'];
-            //     $brand_id = $brand['id'];
-            //     $re_brand = new Store($brand_name, $brand_id);
-            //     array_push($brands, $re_brand);
-            // }
-            // return $brands;
+            $brands = array();
+            $query = $GLOBALS['DB']->query("SELECT * FROM brands;");
+            foreach( $query as $brand)
+            {
+                $brand_name = $brand['name'];
+                $brand_id = $brand['id'];
+                $re_brand = new Brand($brand_name, $brand_id);
+                array_push($brands, $re_brand);
+            }
+            return $brands;
         }
 
         static function deleteAll()
         {
-            // $GLOBALS['DB']->exec("DELETE FROM brands;");
+            $GLOBALS['DB']->exec("DELETE FROM brands;");
         }
 
         function update($new_name)
@@ -67,7 +67,7 @@
             // {
             //     $brand_name = $brand['name'];
             //     $brand_id = $brand['id'];
-            //     $re_brand = new Store($brand_name, $brand_id);
+            //     $re_brand = new Brand($brand_name, $brand_id);
             //     array_push($brands, $re_brand);
             // }
             // return $brands[0];

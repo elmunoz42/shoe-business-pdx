@@ -14,11 +14,11 @@
     $DB = new PDO($server, $username, $password);
     class BrandTest extends PHPUnit_Framework_TestCase{
 
-        // protected function teardown()
-        // {
-        //     Brand::deleteAll();
-        //     Store::deleteAll();
-        // }
+        protected function teardown()
+        {
+            Brand::deleteAll();
+            Store::deleteAll();
+        }
 
         function test_construct()
         {
