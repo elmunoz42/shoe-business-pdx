@@ -1,14 +1,38 @@
-<form class="form-horizontal">
-  <div class="form-group">
-    <label class="col-sm-2 control-label">Email</label>
-    <div class="col-sm-10">
-      <p class="form-control-static">email@example.com</p>
-    </div>
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-4">
+    <form class="form-horizontal" action="/stores/create" method="post">
+      <h4>Register a store:</h4>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">name:</label>
+        <div class="col-sm-10">
+          <input type="text" name="store_name" placeholder="Good-Feet-Store">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-10">
+          <button type="submit" class="form-control">Submit</button>
+        </div>
+      </div>
+    </form>
   </div>
-  <div class="form-group">
-    <label for="inputPassword" class="col-sm-2 control-label">Password</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+  <!-- left column -->
+  <div class="col-md-8">
+    {% if stores is not empty %}
+    <table class="table table-striped">
+      <th>
+      </th>
+    </table>
+    {% else %}
+    <div class="jumbotron">
+      <h4>No stores registered yet.</h4>
     </div>
+    {% endif %}
   </div>
-</form>
+</div>
+<!-- midrow -->
+
+
+{% endblock %}

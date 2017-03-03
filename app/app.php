@@ -34,6 +34,8 @@
     //Create store
     $app->post('/stores/create', function() use ($app) {
 
+        $new_store = new Store($_POST['store_name']);
+        $new_store->save();
         return $app->redirect('/stores');
 
     });
@@ -41,7 +43,8 @@
     // Read stores // View brands that it carries
     $app->get('/stores', function() use ($app){
 
-        return $app['twig']->render('stores.html.twig');
+
+        return $app['twig']->render('stores.html.twig', array('stores'=>Store::getAll()));
 
     });
 

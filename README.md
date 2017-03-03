@@ -13,6 +13,7 @@ _App that allows user to register, view matches, and edit and delete shoe stores
 
 | Behavior                                              |   Input example   |  Output example |
 |-------------------------------------------------------|:-----------------:|:---------------:|
+| 0) User goes to store page and sees that there are no registered stores.| click STORES link | "No stores registered yet."|
 | 1) User can register a store.|||
 | 2) User can view list of stores.|||
 | 3) User can view and individual store.|||
