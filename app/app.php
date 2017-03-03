@@ -58,14 +58,17 @@
     });
 
     // Update store
-    $app->patch('/stores/update', function() use ($app){
+    $app->patch('/stores/{id}', function($id) use ($app){
 
-        return $app->redirect('/stores/{id}');
+        $store = Store::find($id);
+        $store->update($_POST['new_store_name']);
+
+        return $app['twig']->render('store.html.twig', array('store'=>$store, 'assigned_brands'=>$store->findBrands() ));
 
     });
 
     // Delete stores
-    $app->delete('/stores/delete', function() use ($app){
+    $app->delete('/stores', function() use ($app){
 
         return $app->redirect('/stores');
 
