@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<div class="jumbotron page-title">
+  <h3>{{ store.getName }}</h3>
+  <h4>You've succesfully changed the name</h4>
+  <a href="/stores/{{ store.getId }}">Back to Store</a>
+</div>
+
+{% endblock %}

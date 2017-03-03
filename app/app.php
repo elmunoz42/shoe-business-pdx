@@ -62,14 +62,14 @@
 
         $store = Store::find($id);
         $store->update($_POST['new_store_name']);
-
-        return $app['twig']->render('store.html.twig', array('store'=>$store, 'assigned_brands'=>$store->findBrands() ));
+        return $app['twig']->render('store_name_update.html.twig', array('store'=>$store));
 
     });
 
     // Delete stores
-    $app->delete('/stores', function() use ($app){
+    $app->delete('/stores/delete_all', function() use ($app){
 
+        Store::deleteAll();
         return $app->redirect('/stores');
 
     });
