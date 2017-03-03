@@ -20,4 +20,4 @@
    # if requested files doesn't exist in /web then forward it to index.php
    RewriteCond %{DOCUMENT_ROOT}/web/$1 !-f
    RewriteRule ^(.+?)/?$ ./index.php [L]
-</IfModule>
+ </IfModule>
