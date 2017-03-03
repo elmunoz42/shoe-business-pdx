@@ -120,6 +120,11 @@
             // Assert
             $this->assertEquals($test_store2, $result[0]);
         }
+
+        function test_findBrands()
+        {
+            
+        }
     }
 
 ?>
