@@ -36,7 +36,7 @@
 
         $new_store = new Store($_POST['store_name']);
         $new_store->save();
-        
+
         return $app->redirect('/stores');
 
     });
@@ -52,7 +52,8 @@
     // Read store (singular)
     $app->get('/stores/{id}', function($id) use ($app){
 
-        return $app['twig']->render('store.html.twig');
+        $store = Store::find($id);
+        return $app['twig']->render('store.html.twig', array('store'=>$store, 'assigned_brands'=>$store->findBrands() ));
 
     });
 
