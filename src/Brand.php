@@ -56,6 +56,7 @@
         function update($new_name)
         {
             $GLOBALS['DB']->exec("UPDATE brands SET name = '{$new_name}' WHERE id={$this->getId()};");
+            $this->setName($new_name);
         }
 
         function find($searchId)
@@ -78,9 +79,9 @@
             $GLOBALS['DB']->exec("DELETE FROM brands WHERE id = {$this->getId()};");
         }
 
-        function assignStore()
+        function assignStore($storeId)
         {
-            
+            $GLOBALS['DB']->exec("INSERT INTO brands_stores (brand_id, store_id) VALUES ({$this->getId()}, {$storeId});");
         }
     }
 

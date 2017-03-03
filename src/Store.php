@@ -56,6 +56,7 @@
         function update($new_name)
         {
             $GLOBALS['DB']->exec("UPDATE stores SET name = '{$new_name}' WHERE id={$this->getId()};");
+            $this->setName($new_name);
         }
 
         function find($searchId)
@@ -80,7 +81,20 @@
 
         function findBrands()
         {
-            
+            $query = $GLOBALS['DB']->query("SELECT brands.* FROM
+            stores  JOIN brands_stores ON (stores.id = brands_stores.store_id)
+                    JOIN brands ON (brands_stores.brand_id = brands.id)
+                    WHERE stores.id = {$this->getId()};");
+
+            $results = array();
+            foreach( $query as $brand )
+            {
+                $brand_name = $brand['name'];
+                $brand_id = $brand['id'];
+                $re_brand = new Brand($brand_name, $brand_id);
+                array_push($results, $re_brand);
+            }
+            return $results;
         }
     }
 

@@ -125,7 +125,7 @@
             $input_name = "The Bruggliatos";
             $test_store = new Store($input_name);
             $test_store->save();
-            
+
             $input_brand_name = "Keens";
             $test_brand = new Brand($input_brand_name);
             $test_brand->save();
@@ -133,13 +133,13 @@
             $input_brand_name2 = "Nike";
             $test_brand2 = new Brand($input_brand_name2);
             $test_brand2->save();
-
+            $test_brand2->assignStore($test_store->getId());
 
             // Act
             $result = $test_store->findBrands();
 
             // Assert
-            $this->assertEquals($result);
+            $this->assertEquals([$test_brand2], $result);
 
         }
     }
