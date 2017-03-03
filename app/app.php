@@ -31,7 +31,7 @@
 
     });
     //Create store
-    $app->post('/stores', function() use ($app) {
+    $app->post('/stores/create', function() use ($app) {
 
         return $app->redirect('/stores');
 
@@ -61,8 +61,23 @@
 
     });
     //Create brand
+    $app->post('/brands/create', function () use ($app){
+
+        return $app->redirect('/brands');
+
+    });
     // Read brands
+    $app->get('/brands', function () use ($app) {
+
+        return $app->render('brands.html.twig');
+
+    });
     // Read brand (singular)
+    $app->get('/brands/{id}', function($id) use ($app) {
+
+        return $app->render('brand.html.twig');
+        
+    });
     // Match brand to a store
 
     return $app;
