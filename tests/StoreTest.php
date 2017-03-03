@@ -42,9 +42,7 @@
         {
             // Arrange
             $input_name = "Keens";
-            $input_id = 1;
-            $test_store = new Store("", $input_id);
-            $test_store->setName($input_name);
+            $test_store = new Store($input_name);
             $test_store->save();
 
             // Act
@@ -58,9 +56,7 @@
         {
             // Arrange
             $input_name = "Keens";
-            $input_id = 1;
-            $test_store = new Store("", $input_id);
-            $test_store->setName($input_name);
+            $test_store = new Store($input_name);
             $test_store->save();
 
             // Act
@@ -76,9 +72,7 @@
             // Arrange
             $input_name = "Keens";
             $input_name2 = "The Bruggliatos";
-            $input_id = 1;
-            $test_store = new Store("", $input_id);
-            $test_store->setName($input_name);
+            $test_store = new Store($input_name);
             $test_store->save();
 
             // Act
@@ -89,6 +83,24 @@
             $this->assertEquals($input_name2, $result[0]->getName());
         }
 
+        function test_find()
+        {
+            // Arrange
+            $input_name = "Keens";
+            $test_store = new Store($input_name);
+            $test_store->setName($input_name);
+            $test_store->save();
+            $input_name2 = "The Bruggliatos";
+            $test_store2 = new Store($input_name2);
+            $test_store2->save();
+
+            // Act
+            $result = Store::find($test_store2->getId());
+
+            // Assert
+            $this->assertEquals($test_store2, $result);
+
+        }
 
     }
 

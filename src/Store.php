@@ -57,6 +57,20 @@
         {
             $GLOBALS['DB']->exec("UPDATE stores SET name = '{$new_name}' WHERE id={$this->getId()};");
         }
+
+        function find($searchId)
+        {
+            // $query = $GLOBALS['DB']->query("SELECT FROM stores WHERE id = {$searchId};");
+            // $stores = array();
+            // foreach($query as $store )
+            // {
+            //     $store_name = $store['name'];
+            //     $store_id = $store['id'];
+            //     $re_store = new Store($store_name, $store_id);
+            //     array_push($stores, $re_store);
+            // }
+            // return $stores[0];
+        }
     }
 
  ?>
