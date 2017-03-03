@@ -38,7 +38,7 @@
 
     });
 
-    // Read stores
+    // Read stores // View brands that it carries
     $app->get('/stores', function() use ($app){
 
         return $app['twig']->render('stores.html.twig');

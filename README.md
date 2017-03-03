@@ -16,14 +16,14 @@ _App that allows user to register, view matches, and edit and delete shoe stores
 | 1) User can register a store.|||
 | 2) User can view list of stores.|||
 | 3) User can view and individual store.|||
-| 4) User can update a stores information|||
+| 4) User can update a stores information.|||
 | 5) User can delete all stores.|||
-| 6) User can delete a single store|||
+| 6) User can delete a single store.|||
 | 7) User can register a brand.|||
 | 8) User can view list of brands.|||
 | 9) User can view and individual brand.|||
-| 10) User can match a brand to a store|||
-
+| 10) User can match a brand to a store.|||
+| 11) User can view all the brands assigned to a store.|||
 
 
 ## Setup/Installation Requirements
@@ -54,7 +54,11 @@ _web browser and PHP 5 are necessary to operate this _
 
 ## Known Bugs
 
-_There are no known present at this time._
+_At this time the Apache server at localhost:8888 is not displaying the site on my local computer.
+The instructions above work on certain versions of MAMP but apparently not mine - or who knows.
+As a temporary solution I'm using a php server in my document directory to run the site._
+* _in the web folder run: php -S localhost:8000._
+* _type localhost:8000 in the browser._
 
 ## Support and contact details
 
