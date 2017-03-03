@@ -13,9 +13,27 @@ _App that allows ._
 
 | Behavior                                              |   Input example   |  Output example |
 |-------------------------------------------------------|:-----------------:|:---------------:|
+| 1) User can register a store.|||
+| 2) User can view list of stores.|||
+| 3) User can view and individual store.|||
+| 4) User can update a stores information|||
+| 5) User can delete all stores.|||
+| 6) User can delete a single store|||
+| 7) User can register a brand.|||
+| 8) User can view list of brands.|||
+| 9) User can view and individual brand.|||
+| 10) User can update a brands information|||
+| 11) User can delete all brands.|||
+| 12) User can delete a single brand|||
 
 
 ## Setup/Installation Requirements
+    Production database: shoes
+    Development database: shoes_test
+    Apache port number in MAMP>settings: 8888
+    MySQL port number in MAMP>settings: 8889
+
+
 * _CREATE DATABASE shoes;_
 * _CREATE TABLE brands (name VARCHAR(255), id serial PRIMARY KEY);_
 * _CREATE TABLE stores (name VARCHAR(255), id serial PRIMARY KEY);_
