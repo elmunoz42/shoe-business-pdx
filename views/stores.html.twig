@@ -20,15 +20,26 @@
   </div>
   <!-- left column -->
   <div class="col-md-8">
+    <!-- class="table table-striped" -->
     {% if stores is not empty %}
-    <table class="table table-striped">
-      <th>
-      </th>
-    </table>
-    {% else %}
-    <div class="jumbotron">
-      <h4>No stores registered yet.</h4>
-    </div>
+      <colgroup>
+         <col span="2" style="background-color:white">
+         <col style="background-color:lightgrey">
+       </colgroup>
+      <table class="table table-striped">
+        <tr>
+          <th><p>STORES:</p></tr>
+        </tr>
+        {% for store in stores %}
+          <tr>
+            <th><a href="/stores/{{ store.getId }}">{{ store.getName }}</a></tr>
+          </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <div class="jumbotron">
+        <h4>No stores registered yet.</h4>
+      </div>
     {% endif %}
   </div>
 </div>

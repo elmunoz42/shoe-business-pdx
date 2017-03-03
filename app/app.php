@@ -36,6 +36,7 @@
 
         $new_store = new Store($_POST['store_name']);
         $new_store->save();
+        
         return $app->redirect('/stores');
 
     });
