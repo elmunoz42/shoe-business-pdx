@@ -101,25 +101,25 @@
             $this->assertEquals($test_brand2, $result);
 
         }
-        
-        // function test_delete()
-        // {
-        //     // Arrange
-        //     $input_name = "Keens";
-        //     $test_brand = new Brand($input_name);
-        //     $test_brand->setName($input_name);
-        //     $test_brand->save();
-        //     $input_name2 = "The Bruggliatos";
-        //     $test_brand2 = new Brand($input_name2);
-        //     $test_brand2->save();
-        //
-        //     // Act
-        //     $test_brand->delete();
-        //     $result = Brand::getAll();
-        //
-        //     // Assert
-        //     $this->assertEquals($test_brand2, $result[0]);
-        // }
+
+        function test_delete()
+        {
+            // Arrange
+            $input_name = "Keens";
+            $test_brand = new Brand($input_name);
+            $test_brand->setName($input_name);
+            $test_brand->save();
+            $input_name2 = "The Bruggliatos";
+            $test_brand2 = new Brand($input_name2);
+            $test_brand2->save();
+
+            // Act
+            $test_brand->delete();
+            $result = Brand::getAll();
+
+            // Assert
+            $this->assertEquals($test_brand2, $result[0]);
+        }
     }
 
 ?>
