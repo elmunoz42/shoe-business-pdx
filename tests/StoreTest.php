@@ -102,6 +102,24 @@
 
         }
 
+        function test_delete()
+        {
+            // Arrange
+            $input_name = "Keens";
+            $test_store = new Store($input_name);
+            $test_store->setName($input_name);
+            $test_store->save();
+            $input_name2 = "The Bruggliatos";
+            $test_store2 = new Store($input_name2);
+            $test_store2->save();
+
+            // Act
+            $test_store->delete();
+            $result = Store::getAll();
+
+            // Assert
+            $this->assertEquals($test_store2, $result[0]);
+        }
     }
 
 ?>

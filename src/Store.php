@@ -72,6 +72,11 @@
             }
             return $stores[0];
         }
+
+        function delete()
+        {
+            // $GLOBALS['DB']->exec("DELETE FROM stores WHERE id = {$this->getId()};");
+        }
     }
 
  ?>
