@@ -60,16 +60,17 @@
 
         function find($searchId)
         {
-            // $query = $GLOBALS['DB']->query("SELECT FROM stores WHERE id = {$searchId};");
-            // $stores = array();
-            // foreach($query as $store )
-            // {
-            //     $store_name = $store['name'];
-            //     $store_id = $store['id'];
-            //     $re_store = new Store($store_name, $store_id);
-            //     array_push($stores, $re_store);
-            // }
-            // return $stores[0];
+            $query = $GLOBALS['DB']->query("SELECT * FROM stores WHERE id = {$searchId};");
+            $stores = array();
+            $returned_stores = $query->fetchAll(PDO::FETCH_ASSOC);
+            foreach( $returned_stores as $store )
+            {
+                $store_name = $store['name'];
+                $store_id = $store['id'];
+                $re_store = new Store($store_name, $store_id);
+                array_push($stores, $re_store);
+            }
+            return $stores[0];
         }
     }
 
