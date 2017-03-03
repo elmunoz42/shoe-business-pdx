@@ -66,22 +66,22 @@
             // Assert
             $this->assertEquals([],$result);
         }
-        //
-        // function test_update()
-        // {
-        //     // Arrange
-        //     $input_name = "Keens";
-        //     $input_name2 = "The Bruggliatos";
-        //     $test_brand = new Brand($input_name);
-        //     $test_brand->save();
-        //
-        //     // Act
-        //     $test_brand->update($input_name2);
-        //     $result = Brand::getAll();
-        //
-        //     // Assert
-        //     $this->assertEquals($input_name2, $result[0]->getName());
-        // }
+        
+        function test_update()
+        {
+            // Arrange
+            $input_name = "Keens";
+            $input_name2 = "The Bruggliatos";
+            $test_brand = new Brand($input_name);
+            $test_brand->save();
+
+            // Act
+            $test_brand->update($input_name2);
+            $result = Brand::getAll();
+
+            // Assert
+            $this->assertEquals($input_name2, $result[0]->getName());
+        }
         //
         // function test_find()
         // {
