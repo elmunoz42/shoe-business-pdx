@@ -60,17 +60,17 @@
 
         function find($searchId)
         {
-            // $query = $GLOBALS['DB']->query("SELECT * FROM brands WHERE id = {$searchId};");
-            // $brands = array();
-            // $returned_brands = $query->fetchAll(PDO::FETCH_ASSOC);
-            // foreach( $returned_brands as $brand )
-            // {
-            //     $brand_name = $brand['name'];
-            //     $brand_id = $brand['id'];
-            //     $re_brand = new Brand($brand_name, $brand_id);
-            //     array_push($brands, $re_brand);
-            // }
-            // return $brands[0];
+            $query = $GLOBALS['DB']->query("SELECT * FROM brands WHERE id = {$searchId};");
+            $brands = array();
+            $returned_brands = $query->fetchAll(PDO::FETCH_ASSOC);
+            foreach( $returned_brands as $brand )
+            {
+                $brand_name = $brand['name'];
+                $brand_id = $brand['id'];
+                $re_brand = new Brand($brand_name, $brand_id);
+                array_push($brands, $re_brand);
+            }
+            return $brands[0];
         }
 
         function delete()
