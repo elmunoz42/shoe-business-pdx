@@ -52,20 +52,20 @@
             $this->assertEquals([$test_brand], $result);
         }
 
-        // function test_deleteAll()
-        // {
-        //     // Arrange
-        //     $input_name = "Keens";
-        //     $test_brand = new Brand($input_name);
-        //     $test_brand->save();
-        //
-        //     // Act
-        //     Brand::deleteAll();
-        //     $result = Brand::getAll();
-        //
-        //     // Assert
-        //     $this->assertEquals([],$result);
-        // }
+        function test_deleteAll()
+        {
+            // Arrange
+            $input_name = "Keens";
+            $test_brand = new Brand($input_name);
+            $test_brand->save();
+
+            // Act
+            Brand::deleteAll();
+            $result = Brand::getAll();
+
+            // Assert
+            $this->assertEquals([],$result);
+        }
         //
         // function test_update()
         // {
