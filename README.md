@@ -6,7 +6,7 @@
 
 ## Description
 
-_App that allows ._
+_App that allows user to register, view matches, and edit and delete shoe stores and brands._
 
 
 ## Specifications
@@ -22,27 +22,27 @@ _App that allows ._
 | 7) User can register a brand.|||
 | 8) User can view list of brands.|||
 | 9) User can view and individual brand.|||
-| 10) User can update a brands information|||
-| 11) User can delete all brands.|||
-| 12) User can delete a single brand|||
+| 10) User can match a brand to a store|||
+
 
 
 ## Setup/Installation Requirements
-    Production database: shoes
-    Development database: shoes_test
-    Apache port number in MAMP>settings: 8888
-    MySQL port number in MAMP>settings: 8889
+* _Production database: shoes_
+* _Development database: shoes_test_
+* _Apache port number in MAMP>settings: 8888_
+* _MySQL port number in MAMP>settings: 8889_
 
 
+### Database Tables Creation steps: (unnecessary if shoes.sql.zip and )
 * _CREATE DATABASE shoes;_
 * _CREATE TABLE brands (name VARCHAR(255), id serial PRIMARY KEY);_
 * _CREATE TABLE stores (name VARCHAR(255), id serial PRIMARY KEY);_
 * _CREATE TABLE brands_stores (brand_id INT, store_id INT, id serial PRIMARY KEY);_
-### Database Tables Creation steps:
-
 
 ### Installation:
 * _unzip the shoes.sql.zip and shoes_test.sql.zip_
+* _browse to http://localhost:8888/MAMP/index.php?page=phpmyadmin&language=English _
+* _import the sql files above._
 * _run MAMP and click start servers._
 * _Clone repository from github._
 * _In Terminal run: Install composer_

@@ -30,26 +30,40 @@
         return $app['twig']->render('index.html.twig');
 
     });
-
     //Create store
     $app->post('/stores', function() use ($app) {
+
         return $app->redirect('/stores');
+
     });
     // Read stores
     $app->get('/stores', function() use ($app){
-        
+
     });
     // Read store (singular)
+    $app->get('/stores/{id}', function($id) use ($app){
+
+    });
     // Update store
+    $app->patch('/stores/update', function() use ($app){
+
+    });
     // Delete stores
+    $app->delete('/stores/delete', function() use ($app){
+
+        return $app->redirect('/stores');
+
+    });
     // Delete store (singular)
+    $app->delete('/stores/delete_singular', function() use ($app){
+
+        return $app->redirect('/stores/');
+
+    });
     //Create brand
     // Read brands
     // Read brand (singular)
-    // Update brand
-    // Delete brands
-    // Delete brand (singular)
-
+    // Match brand to a store
 
     return $app;
 
