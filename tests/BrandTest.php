@@ -88,7 +88,6 @@
             // Arrange
             $input_name = "Keens";
             $test_brand = new Brand($input_name);
-            $test_brand->setName($input_name);
             $test_brand->save();
             $input_name2 = "The Bruggliatos";
             $test_brand2 = new Brand($input_name2);
@@ -107,7 +106,6 @@
             // Arrange
             $input_name = "Keens";
             $test_brand = new Brand($input_name);
-            $test_brand->setName($input_name);
             $test_brand->save();
             $input_name2 = "The Bruggliatos";
             $test_brand2 = new Brand($input_name2);
