@@ -14,17 +14,17 @@
         // getters and setters
         function setName($new_name)
         {
-            // $this->name = (string) $new_name;
+            $this->name = (string) $new_name;
         }
 
         function getName()
         {
-            // return $this->getName();
+            return $this->name;
         }
 
         function getId()
         {
-            // return $this->id;
+            return $this->id;
         }
     }
 
