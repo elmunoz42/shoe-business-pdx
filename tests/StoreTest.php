@@ -37,6 +37,24 @@
             $this->assertEquals($input_id, $result2);
 
         }
+
+        function test_save()
+        {
+            // Arrange
+            $input_name = "Keens";
+            $input_id = 1;
+            $test_store = new Store("", $input_id);
+            $test_store->setName($input_name);
+            $test_store->save();
+
+            // Act
+            $result = Store::getAll();
+
+            // Assert
+            $this->assertEquals([$test_store], $result);
+        }
+
+
     }
 
 ?>
