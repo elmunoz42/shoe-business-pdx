@@ -14,11 +14,11 @@
     $DB = new PDO($server, $username, $password);
     class StoreTest extends PHPUnit_Framework_TestCase{
 
-        // protected function teardown()
-        // {
-        //     Brand::deleteAll();
-        //     Store::deleteAll();
-        // }
+        protected function teardown()
+        {
+            // Brand::deleteAll();
+            Store::deleteAll();
+        }
 
         function test_construct()
         {
@@ -52,6 +52,23 @@
 
             // Assert
             $this->assertEquals([$test_store], $result);
+        }
+
+        function test_deleteAll()
+        {
+            // Arrange
+            $input_name = "Keens";
+            $input_id = 1;
+            $test_store = new Store("", $input_id);
+            $test_store->setName($input_name);
+            $test_store->save();
+
+            // Act
+            Store::deleteAll();
+            $result = Store::getAll();
+
+            // Assert
+            $this->assertEquals([],$result);
         }
 
 
