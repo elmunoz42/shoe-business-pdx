@@ -77,6 +77,11 @@
         {
             $GLOBALS['DB']->exec("DELETE FROM brands WHERE id = {$this->getId()};");
         }
+
+        function assignStore()
+        {
+            
+        }
     }
 
  ?>
