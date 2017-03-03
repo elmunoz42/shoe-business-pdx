@@ -25,6 +25,8 @@ _App that allows user to register, view matches, and edit and delete shoe stores
 | 9) User can view and individual brand.|||
 | 10) User can match a brand to a store.|||
 | 11) User can view all the brands assigned to a store.|||
+| 12) User can match a store to a brand.|||
+| 13) User can view all the stores assigned to a brand.|||
 
 
 ## Setup/Installation Requirements
@@ -48,7 +50,7 @@ _App that allows user to register, view matches, and edit and delete shoe stores
 * _Clone repository from github._
 * _In Terminal run: Install composer_
 * _In the MAMP application set: preferences > web server > Shoe-Business-PDX > web ._
-* _Open localhost:8888 in the browser of your choice._
+* _Open localhost:8888 in the browser of your choice. *** VIEW KNOWN BUGS BELLOW ***_
 
 
 _web browser and PHP 5 are necessary to operate this _
@@ -56,7 +58,7 @@ _web browser and PHP 5 are necessary to operate this _
 ## Known Bugs
 
 _At this time the Apache server at localhost:8888 is not displaying the site on my local computer.
-The instructions above work on certain versions of MAMP but apparently not mine - or who knows.
+The instructions above work on certain versions of MAMP but apparently not mine.
 As a temporary solution I'm using a php server in my document directory to run the site._
 * _in the web folder run: php -S localhost:8000._
 * _type localhost:8000 in the browser._

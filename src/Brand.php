@@ -83,6 +83,24 @@
         {
             $GLOBALS['DB']->exec("INSERT INTO brands_stores (brand_id, store_id) VALUES ({$this->getId()}, {$storeId});");
         }
+
+        function findStores()
+        {
+            // $query = $GLOBALS['DB']->query("SELECT stores.* FROM
+            // brands  JOIN brands_stores ON (brands.id = brands_stores.brand_id)
+            //         JOIN stores ON (brands_stores.store_id = stores.id)
+            //         WHERE brands.id = {$this->getId()};");
+            //
+            // $results = array();
+            // foreach( $query as $store )
+            // {
+            //     $store_name = $store['name'];
+            //     $store_id = $store['id'];
+            //     $re_store = new Store($store_name, $store_id);
+            //     array_push($results, $re_store);
+            // }
+            // return $results;
+        }
     }
 
  ?>

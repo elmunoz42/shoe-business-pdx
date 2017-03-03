@@ -103,7 +103,8 @@
     // Read brand (singular)
     $app->get('/brands/{id}', function($id) use ($app) {
 
-        return $app['twig']->render('brand.html.twig');
+        $brand = Brand::find($id);
+        return $app['twig']->render('brand.html.twig', array('brand'=>$brand ));
 
     });
 

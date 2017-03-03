@@ -142,6 +142,32 @@
             $this->assertEquals([$test_brand2], $result);
 
         }
+
+        function test_findStores()
+        {
+            // Arrange
+            $input_brand_name = "Nike";
+            $test_brand = new Brand($input_brand_name2);
+            $test_brand->save();
+
+            $input_name = "The Bruggliatos";
+            $test_store = new Store($input_name);
+            $test_store->save();
+            $test_store->assignBrand($test_brand->getId());
+
+            $input_store_name = "Next Adventure";
+            $test_store2 = new Store($input_brand_name);
+            $test_store2->save();
+            $test_store2->assignBrand($test_brand->getId());
+
+
+            // Act
+            $result = $test_brand->findStores();
+
+            // Assert
+            $this->assertEquals([$test_store, $test_store2], $result);
+
+        }
     }
 
 ?>
