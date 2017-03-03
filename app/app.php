@@ -75,15 +75,20 @@
     });
 
     // Delete store (singular)
-    $app->delete('/stores/delete_singular', function() use ($app){
+    $app->delete('/stores/{id}', function($id) use ($app){
 
-        return $app->redirect('/stores/{id}');
+        $store = Store::find($id);
+        $store_name = $store->getName();
+        $store->delete();
+        return $app['twig']->render('store_deletion.html.twig', array('store_name'=>$store_name));
 
     });
 
-    //Create brand
+    // Create brand
     $app->post('/brands/create', function () use ($app){
 
+        $new_brand = new Brand($_POST['brand_name']);
+        $new_brand->save();
         return $app->redirect('/brands');
 
     });
@@ -91,14 +96,14 @@
     // Read brands
     $app->get('/brands', function () use ($app) {
 
-        return $app->render('brands.html.twig');
+        return $app['twig']->render('brands.html.twig', array('brands'=>Brand::getAll()));
 
     });
 
     // Read brand (singular)
     $app->get('/brands/{id}', function($id) use ($app) {
 
-        return $app->render('brand.html.twig');
+        return $app['twig']->render('brand.html.twig');
 
     });
 
