@@ -88,7 +88,6 @@
             // Arrange
             $input_name = "Keens";
             $test_store = new Store($input_name);
-            $test_store->setName($input_name);
             $test_store->save();
             $input_name2 = "The Bruggliatos";
             $test_store2 = new Store($input_name2);
@@ -107,7 +106,6 @@
             // Arrange
             $input_name = "Keens";
             $test_store = new Store($input_name);
-            $test_store->setName($input_name);
             $test_store->save();
             $input_name2 = "The Bruggliatos";
             $test_store2 = new Store($input_name2);
@@ -123,7 +121,7 @@
 
         function test_findBrands()
         {
-            
+
         }
     }
 
