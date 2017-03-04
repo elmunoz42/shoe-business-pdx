@@ -28,9 +28,6 @@ a {
 }
 #title {
   align-items: center;
-  /*268px;752px;*/
-  height: 402px;
-  width: 1128px;
   margin-top: 10px;
  color: white;
  text-shadow: grey 0.1em 0.1em 0.1em;
