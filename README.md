@@ -17,11 +17,11 @@ _App that allows user to register, view matches, and edit and delete shoe stores
 | 1) User can register a store.|"Next Adventure" submit the form in the STORES page| view created store.|
 | 2) User can view a list of stores.|click on STORES link | list of registered stores|
 | 3) User can view and individual store.|click on store link "Next Adventure"| "Next Adventure" page |
-| 4) User can update a stores information.|||
-| 5) User can delete all stores.|||
-| 6) User can delete a single store.|||
-| 7) User can register a brand.|||
-| 8) User can view list of brands.|||
+| 4) User can update a stores information.|in "Next Adventure" store page type "Great Adventure" submit | "Great Adventure" |
+| 5) User can delete all stores.| delete all in stores page | "no stores registered yet"|
+| 6) User can delete a single store.| in "Great Adventure" store page click delete | "store has been deleted." |
+| 7) User can register a brand.| In brands page type "Vionic"| view created store. |
+| 8) User can view list of brands.| ||
 | 9) User can view and individual brand.|||
 | 10) User can match a brand to a store.|||
 | 11) User can view all the brands assigned to a store.|||

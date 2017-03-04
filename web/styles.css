@@ -1,3 +1,10 @@
+body {
+    background-color: lightgreen;
+}
+a {
+    color: darkgreen;
+    font-weight: bolder;
+}
 .quote {
     font-size: 18px;
 }
@@ -10,7 +17,30 @@
 .title h1 {
 
 }
-.jumbotron .page-title {
-    padding-top: 10px;
-    padding-bottom: 10px;
+.well {
+    background-color:  #2E8B57;
+}
+.jumbotron {
+    background-color:  #2E8B57;
+}
+.navbar {
+    background-color:  lightgreen;
+}
+#title {
+  align-items: center;
+  /*268px;752px;*/
+  height: 402px;
+  width: 1128px;
+  margin-top: 10px;
+ color: white;
+ text-shadow: grey 0.1em 0.1em 0.1em;
+ text-align: center;
+ background: #000 url("mount_hood2.jpeg") no-repeat center center;
+ background-size: 100% 100%;
+ -moz-background-size: 100% 100%;
+ -webkit-background-size: 100% 100%;
+ -o-background-size: 100% 100%;
+ border-color: white;
+ border-style: groove;
+border-width: 2px;
 }
