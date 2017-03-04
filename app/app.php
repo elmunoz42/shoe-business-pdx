@@ -53,7 +53,8 @@
     $app->get('/stores/{id}', function($id) use ($app){
 
         $store = Store::find($id);
-        return $app['twig']->render('store.html.twig', array('store'=>$store, 'assigned_brands'=>$store->findBrands() ));
+        $assigned_stores = $store->findBrands();
+        return $app['twig']->render('store.html.twig', array('store'=>$store, 'assigned_brands'=>$assigned_stores ));
 
     });
 
@@ -80,7 +81,7 @@
         $store = Store::find($id);
         $store_name = $store->getName();
         $store->delete();
-        return $app['twig']->render('store_deletion.html.twig', array('store_name'=>$store_name));
+        return $app['twig']->render('store_deletion.html.twig', array('store_name'=>$store_name, 'brand'=>Brand::getAll()) );
 
     });
 
@@ -103,15 +104,32 @@
     // Read brand (singular)
     $app->get('/brands/{id}', function($id) use ($app) {
 
+
         $brand = Brand::find($id);
-        return $app['twig']->render('brand.html.twig', array('brand'=>$brand ));
+        $assigned_stores = $brand->findStores();
+        return $app['twig']->render('brand.html.twig', array('brand'=>$brand, 'assigned_stores' =>$assigned_stores, 'stores'=>Store::getAll()));
 
     });
 
-    // Match brand to a store
+    // Match brand to a new store
     $app->post('/brands/match', function() use ($app) {
 
-        return $app->redirect('/brands/{id}');
+        $store = new Store($_POST['new_store_name']);
+        $store->save();
+        $brand = Brand::find($_POST['brand_id']);
+        $brand->assignStore($store->getId());
+        return $app['twig']->render('brand_assign_store.html.twig', array('store'=>$store, 'brand'=>$brand) );
+
+    });
+
+    // Match a store to a brand
+    $app->post('/stores/match', function() use ($app) {
+
+        $brand = new Brand($_POST['new_brand_name']);
+        $brand->save();
+        $store = Store::find($_POST['store_id']);
+        $store->assignBrand($brand->getId());
+        return $app['twig']->render('store_assign_brand.html.twig', array('brand'=>$brand, 'store'=>$store));
 
     });
 

@@ -79,9 +79,9 @@
             $GLOBALS['DB']->exec("DELETE FROM brands WHERE id = {$this->getId()};");
         }
 
-        function assignStore($storeId)
+        function assignStore($store_id)
         {
-            $GLOBALS['DB']->exec("INSERT INTO brands_stores (brand_id, store_id) VALUES ({$this->getId()}, {$storeId});");
+            $GLOBALS['DB']->exec("INSERT INTO brands_stores (brand_id, store_id) VALUES ({$this->getId()}, {$store_id});");
         }
 
         function findStores()

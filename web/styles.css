@@ -10,3 +10,7 @@
 .title h1 {
 
 }
+.jumbotron .page-title {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
