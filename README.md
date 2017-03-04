@@ -36,7 +36,7 @@ _App that allows user to register, view matches, and edit and delete shoe stores
 * _MySQL port number in MAMP>settings: 8889_
 
 
-### Database Tables Creation steps: (unnecessary if shoes.sql.zip and )
+### Database Tables Creation steps: (unnecessary if shoes.sql.zip and shoes_test.sql.zip are imported )
 * _CREATE DATABASE shoes;_
 * _CREATE TABLE brands (name VARCHAR(255), id serial PRIMARY KEY);_
 * _CREATE TABLE stores (name VARCHAR(255), id serial PRIMARY KEY);_
@@ -44,7 +44,7 @@ _App that allows user to register, view matches, and edit and delete shoe stores
 
 ### Installation:
 * _unzip the shoes.sql.zip and shoes_test.sql.zip_
-* _browse to http://localhost:8888/MAMP/index.php?page=phpmyadmin&language=English _
+* _browse to http://localhost:8888/MAMP/index.php?page=phpmyadmin&language=English_
 * _import the sql files above._
 * _run MAMP and click start servers._
 * _Clone repository from github._
