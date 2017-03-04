@@ -15,6 +15,9 @@
     $password = 'root';
     $DB = new PDO($server, $username, $password);
 
+    use Symfony\Component\Debug\Debug;
+    Debug::enable();
+
     $app = new Silex\Application();
 
     $app['debug'] = true;

@@ -59,7 +59,7 @@
             $this->setName($new_name);
         }
 
-        function find($searchId)
+        static function find($searchId)
         {
             $query = $GLOBALS['DB']->query("SELECT * FROM stores WHERE id = {$searchId};");
             $stores = array();
