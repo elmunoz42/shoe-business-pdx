@@ -136,12 +136,11 @@
 
 
     // Match a store to a brand
-    $app->post('/stores/match', function() use ($app) {
+    $app->post('/brands/match', function() use ($app) {
 
         $brand = Brand::find($_POST['brand_id']);
-
         $store = Store::find($_POST['store_id']);
-        $store->assignBrand($brand->getId());
+        $brand->assignStore($store->getId());
         return $app['twig']->render('store_assign_brand.html.twig', array('brand'=>$brand, 'store'=>$store));
 
     });
@@ -151,7 +150,7 @@
 
         $store = Store::find($_POST['store_id']);
         $brand = Brand::find($_POST['brand_id']);
-        $brand->assignStore($brand->getId());
+        $brand->assignBrand($brand->getId());
         return $app['twig']->render('store_assign_brand.html.twig', array('brand'=>$brand, 'store'=>$store));
 
     });
