@@ -97,6 +97,7 @@
 
     });
 
+
     // Read brands
     $app->get('/brands', function () use ($app) {
 
@@ -111,6 +112,14 @@
         $brand = Brand::find($id);
         $assigned_stores = $brand->findStores();
         return $app['twig']->render('brand.html.twig', array('brand'=>$brand, 'assigned_stores' =>$assigned_stores, 'stores'=>Store::getAll()));
+
+    });
+
+    // Delete stores
+    $app->delete('/brands/delete_all', function() use ($app){
+
+        Brand::deleteAll();
+        return $app->redirect('/brands');
 
     });
 
