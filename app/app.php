@@ -123,17 +123,8 @@
 
     });
 
-    // Match brand to a new store
-    // $app->post('/brands/match', function() use ($app) {
-    //
-    //     $store = new Store($_POST['new_store_name']);
-    //     $store->save();
-    //     $brand = Brand::find($_POST['brand_id']);
-    //     $brand->assignStore($store->getId());
-    //     return $app['twig']->render('brand_assign_store.html.twig', array('store'=>$store, 'brand'=>$brand) );
-    //
-    // });
 
+    //NOTE still needs way to display assigned stores !!
 
     // Match a store to a brand
     $app->post('/brands/match', function() use ($app) {
@@ -141,17 +132,22 @@
         $brand = Brand::find($_POST['brand_id']);
         $store = Store::find($_POST['store_id']);
         $brand->assignStore($store->getId());
-        return $app['twig']->render('store_assign_brand.html.twig', array('brand'=>$brand, 'store'=>$store));
+        $assigned_stores = $brand->findStores();
+
+        return $app['twig']->render('store_assign_brand.html.twig', array('brand'=>$brand, 'store'=>$store, 'assigned_stores'=>$assigned_stores));
 
     });
+
     // Match a brand to a store
     $app->post('/stores/match', function() use ($app) {
 
 
         $store = Store::find($_POST['store_id']);
         $brand = Brand::find($_POST['brand_id']);
-        $brand->assignBrand($brand->getId());
-        return $app['twig']->render('store_assign_brand.html.twig', array('brand'=>$brand, 'store'=>$store));
+        $store->assignBrand($brand->getId());
+        $assigned_brands = $store->findBrands();
+
+        return $app['twig']->render('store_assign_brand.html.twig', array('brand'=>$brand, 'store'=>$store, 'assigned_brands' => $assigned_brands));
 
     });
 
