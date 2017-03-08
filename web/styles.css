@@ -5,6 +5,10 @@ a {
     color: darkgreen;
     font-weight: bolder;
 }
+.white {
+    color:   #1dcf55;
+    font-weight: normal;
+}
 .quote {
     font-size: 18px;
 }
