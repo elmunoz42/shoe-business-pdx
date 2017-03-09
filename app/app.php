@@ -37,7 +37,7 @@
     //Create store
     $app->post('/stores/create', function() use ($app) {
 
-        $new_store = new Store($_POST['store_name']);
+        $new_store = new Store(addslashes($_POST['store_name']));
         $new_store->save();
 
         return $app->redirect('/stores');
@@ -91,7 +91,7 @@
     // Create brand
     $app->post('/brands/create', function () use ($app){
 
-        $new_brand = new Brand($_POST['brand_name']);
+        $new_brand = new Brand(addslashes($_POST['brand_name']));
         $new_brand->save();
         return $app->redirect('/brands');
 
