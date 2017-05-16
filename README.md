@@ -2,7 +2,7 @@
 
 #### _Shoe Business Guide for Portland Or._
 
-#### By _**Carlos Munoz Kampff**_
+#### By _**Carlos Muñoz Kampff**_
 
 ## Description
 
